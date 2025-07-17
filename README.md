@@ -116,11 +116,8 @@ src/
 │   ├── calculator.py     # Black-Scholes implementation
 │   └── market_data.py    # Real-time market data
 ├── strategies/           # Hedging strategies
-│   ├── base.py          # Strategy framework
-│   ├── delta_neutral.py # Delta-neutral hedging
-│   ├── protective_put.py # Protective put strategy
-│   ├── collar.py        # Collar strategy
-│   └── manager.py       # Strategy optimization
+│   ├── hedge_strategies.py  # Strategy framework
+│   ├── strategy_manager.py # strategy manager
 ├── bot/                 # Telegram bot interface
 │   ├── telegram_bot.py  # Main bot implementation
 |   |    main.py         #bot initialization
