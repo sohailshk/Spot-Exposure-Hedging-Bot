@@ -17,7 +17,8 @@ The Spot Hedging Bot is a professional-grade risk management system designed to 
 - 📱 **Telegram Bot Interface**: Real-time monitoring and interactive commands
 - ⚡ **Real-time Performance**: Sub-100ms risk calculations with async architecture
 - 🔒 **Security**: Rate limiting, input validation, and secure configuration
-
+## Working 
+https://www.loom.com/share/d556cd611cdd477ca4e6f8ea900d5095?sid=d75237b1-2e9d-4423-ac5b-85836280cfdd
 ## 🚀 Quick Start
 
 ### Prerequisites
