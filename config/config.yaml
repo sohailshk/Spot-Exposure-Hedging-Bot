@@ -1,0 +1,76 @@
+# Spot Hedging Bot Configuration
+
+# API Configuration
+api:
+  # Exchange APIs (add your keys here)
+  binance:
+    api_key: "YOUR_BINANCE_API_KEY"
+    secret_key: "YOUR_BINANCE_SECRET_KEY"
+    sandbox: true
+  
+  bybit:
+    api_key: "YOUR_BYBIT_API_KEY"  
+    secret_key: "YOUR_BYBIT_SECRET_KEY"
+    sandbox: true
+
+# Telegram Bot Configuration
+telegram:
+  bot_token: "7587056007:AAGgNyzmXwCdfQ1-ZJ3JvVvJPNP6W0SBebw"
+  chat_id: "YOUR_TELEGRAM_CHAT_ID"
+  admin_users: []  # List of admin user IDs
+
+# Risk Management Settings
+risk:
+  # Position size limits (in USD)
+  max_position_size: 100000
+  max_portfolio_size: 500000
+  
+  # Risk thresholds
+  delta_threshold: 0.1  # Maximum delta exposure
+  gamma_threshold: 0.05  # Maximum gamma exposure
+  var_threshold: 0.02   # VaR limit (2%)
+  
+  # Correlation settings
+  correlation_lookback: 30  # Days for correlation calculation
+  
+# Hedging Strategy Settings
+strategies:
+  delta_neutral:
+    enabled: true
+    rebalance_threshold: 0.05
+    hedge_ratio_adjustment: 0.1
+  
+  options_collar:
+    enabled: true
+    put_delta: -0.3
+    call_delta: 0.3
+    
+  protective_put:
+    enabled: true
+    delta_threshold: -0.2
+
+# Execution Settings
+execution:
+  # Order settings
+  max_slippage: 0.001  # 0.1%
+  order_timeout: 30    # seconds
+  
+  # Cost analysis
+  trading_fee: 0.001   # 0.1%
+  
+# Monitoring Settings
+monitoring:
+  update_interval: 5    # seconds
+  alert_cooldown: 300   # seconds (5 minutes)
+  
+# Database Settings
+database:
+  type: "sqlite"  # or "postgresql", "mongodb"
+  path: "data/hedging_bot.db"
+  
+# Logging Settings
+logging:
+  level: "INFO"
+  file: "logs/hedging_bot.log"
+  max_size: "10MB"
+  backup_count: 5
