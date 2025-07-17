@@ -60,14 +60,6 @@ pytest test_bot.py
 ```
 
 ## 📱 Using the Telegram Bot
-
-### Getting Started
-1. **Start a chat** with your bot on Telegram
-2. **Send `/start`** to initialize your portfolio
-3. **Add positions** with `/add AAPL 1000 150.50`
-4. **Set monitoring** with `/monitor AAPL 1000 0.1`
-5. **Get recommendations** with `/hedge`
-
 ### Core Commands
 ```
 📊 /portfolio - View current positions and risk metrics
@@ -75,24 +67,6 @@ pytest test_bot.py
 ⚠️ /monitor <symbol> <size> <threshold> - Set risk alerts  
 🛡️ /hedge - Get hedging recommendations
 ❓ /help - Complete command reference
-```
-
-### Example Interaction
-```
-You: /start
-Bot: Welcome to Spot Hedging Bot! 🚀 Your portfolio has been initialized.
-
-You: /add AAPL 1000 150.50
-Bot: ✅ Position Added Successfully
-     Symbol: AAPL | Size: 1,000 shares | Entry: $150.50
-
-You: /monitor AAPL 1000 0.1  
-Bot: 🔍 Risk Monitoring Started
-     Delta Threshold: 0.10 | Current Delta: 0.12 ⚠️
-
-Bot: 🚨 RISK ALERT - AAPL
-     Delta Threshold Breached! Current: 0.15 (Threshold: 0.10)
-     [Hedge Now] [View Portfolio] [Adjust Threshold]
 ```
 
 ## 🏗️ System Architecture
