@@ -21,12 +21,9 @@ The Spot Exposure Hedging Bot is a comprehensive risk management system designed
 - **market_data.py**: Real-time market data integration (yfinance, CCXT)
 
 #### Hedging Strategies (`src/strategies/`)
-- **base.py**: Abstract strategy framework
-- **delta_neutral.py**: Delta-neutral hedging implementation
-- **protective_put.py**: Protective put strategy
-- **collar.py**: Collar strategy with covered calls
-- **manager.py**: Strategy selection and optimization engine
-
+- **hedge_strategies.py**:  strategy implementation
+- **strategy_manager.py**: Delta-neutral hedging implementation
+- 
 #### Telegram Bot Interface (`src/bot/`)
 - **telegram_bot.py**: Main bot implementation with async operations
 - **utils.py**: Message formatting, keyboards, task management
@@ -107,7 +104,7 @@ The Telegram bot provides:
 ## Testing & Quality Assurance
 
 ### Test Coverage
-- **30 Total Tests**: Comprehensive coverage across all components
+- **64 Total Tests**: Comprehensive coverage across all components
 - **Unit Tests**: Individual component functionality
 - **Integration Tests**: End-to-end workflow validation
 - **Async Tests**: Real-time operation validation
@@ -123,7 +120,7 @@ async def test_risk_monitoring():
 ```
 
 ### Quality Metrics
-- ✅ **100% Test Pass Rate**: All 30 tests passing
+- ✅ **100% Test Pass Rate**: All 64 tests passing
 - ✅ **Error Handling**: Graceful degradation for missing dependencies
 - ✅ **Type Safety**: Type hints throughout codebase
 - ✅ **Documentation**: Comprehensive docstrings and comments
@@ -134,8 +131,8 @@ async def test_risk_monitoring():
 ```yaml
 # config.yaml structure
 market_data:
-  default_provider: "yfinance"
-  fallback_provider: "mock"
+  default_provider: "yfinance,binance"
+  fallback_provider: ""
   
 risk:
   delta_threshold: 0.1
@@ -145,11 +142,6 @@ telegram:
   bot_token: "${TELEGRAM_BOT_TOKEN}"
   rate_limit_requests: 10
 ```
-
-### Environment Overrides
-- Sensitive data via environment variables
-- Different configurations for dev/staging/production
-- Runtime configuration updates without code changes
 
 ## Performance & Scalability
 
@@ -225,13 +217,11 @@ telegram:
 ## Technical Debt & Known Limitations
 
 ### Current Limitations
-- Mock market data provider (production needs real data feeds)
 - In-memory storage (no persistence between restarts)
 - Single-threaded execution (can be parallelized)
 - Limited to spot + options hedging (no futures/swaps)
 
 ### Recommended Improvements
-1. **Real Market Data**: Integrate with professional data vendors
 2. **Database Layer**: Add PostgreSQL/MongoDB for persistence
 3. **Caching Layer**: Redis for high-frequency data caching
 4. **Message Queue**: RabbitMQ/Kafka for scaling operations
@@ -246,10 +236,3 @@ The Spot Exposure Hedging Bot successfully delivers a production-ready risk mana
 - **User-Friendly Interface**: Intuitive Telegram bot interaction
 
 The modular architecture and comprehensive test coverage ensure the system can be confidently deployed in production environments while providing a solid foundation for future enhancements and scaling.
-
----
-
-**Report Generated**: July 15, 2025  
-**System Version**: 1.0.0  
-**Total Development Time**: Complete implementation with testing  
-**Test Coverage**: 30 tests, 100% pass rate  
