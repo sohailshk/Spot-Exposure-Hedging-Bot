@@ -16,7 +16,6 @@ The Spot Hedging Bot is a professional-grade risk management system designed to 
 - 🛡️ **Multi-Strategy Hedging**: Delta-neutral, protective puts, and collar strategies
 - 📱 **Telegram Bot Interface**: Real-time monitoring and interactive commands
 - ⚡ **Real-time Performance**: Sub-100ms risk calculations with async architecture
-- 🧪 **Production Quality**: 30 comprehensive tests with 100% pass rate
 - 🔒 **Security**: Rate limiting, input validation, and secure configuration
 
 ## 🚀 Quick Start
@@ -28,7 +27,7 @@ The Spot Hedging Bot is a professional-grade risk management system designed to 
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url> spot-hedging-bot
+[git clone (https://github.com/sohailshk/Spot-Exposure-Hedging-Bot/)
 cd spot-hedging-bot
 
 # Create virtual environment
@@ -46,17 +45,17 @@ pip install -r requirements.txt
 # Set your Telegram bot token
 export TELEGRAM_BOT_TOKEN="your_bot_token_here"
 
-# Optional: Copy and customize configuration
+# : Copy and customize configuration
 cp config/config.yaml.template config/config.yaml
 ```
 
 ### Run the Bot
 ```bash
 # Start the hedging bot
-python -m src.bot.telegram_bot
+python src/bot/main.py
 
 # In another terminal, run tests to verify
-pytest tests/ -v
+pytest test_bot.py
 ```
 
 ## 📱 Using the Telegram Bot
@@ -124,6 +123,7 @@ src/
 │   └── manager.py       # Strategy optimization
 ├── bot/                 # Telegram bot interface
 │   ├── telegram_bot.py  # Main bot implementation
+|   |    main.py         #bot initialization
 │   ├── utils.py         # Utilities and helpers
 │   └── config.py        # Bot configuration
 └── utils/               # Shared utilities
@@ -170,7 +170,7 @@ call_strike = current_price * 1.05  # Upside cap
 pytest tests/ -v
 
 # Expected output:
-# ====== 30 passed in 9.93s ======
+# ====== 64 passed in 5.93s ======
 ```
 
 ### Test Categories
@@ -180,7 +180,7 @@ pytest tests/ -v
 - **Integration Tests**: End-to-end workflow validation
 
 ### Quality Metrics
-- ✅ **100% Test Pass Rate**: All 30 tests passing
+- ✅ **100% Test Pass Rate**: All 64 tests passing
 - ✅ **Type Safety**: Complete type hints throughout
 - ✅ **Error Handling**: Graceful degradation for edge cases
 - ✅ **Documentation**: Comprehensive docstrings and comments
@@ -189,15 +189,6 @@ pytest tests/ -v
 
 ### Environment Variables
 ```bash
-# Required
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-
-# Optional
-MARKET_DATA_API_KEY=your_api_key
-LOG_LEVEL=INFO
-ENVIRONMENT=production
-```
-
 ### Configuration File (config/config.yaml)
 ```yaml
 risk:
@@ -210,7 +201,7 @@ telegram:
   monitoring_interval: 30
 
 market_data:
-  default_provider: "yfinance"
+  default_provider: "yfinance and binance"
   update_interval: 30
 ```
 
@@ -257,7 +248,7 @@ For complete deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE
 1. Install dependencies: `pip install -r requirements.txt`
 2. Configure your API keys in `config/config.yaml`
 3. Set up Telegram bot token
-4. Run: `python src/main.py`
+4. Run: `python src/bot/main.py`
 
 ## Documentation
 
