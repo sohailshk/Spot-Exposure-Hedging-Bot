@@ -22,8 +22,7 @@ The Spot Exposure Hedging Bot is a comprehensive risk management system designed
 
 #### Hedging Strategies (`src/strategies/`)
 - **hedge_strategies.py**:  strategy implementation
-- **strategy_manager.py**: Delta-neutral hedging implementation
-- 
+- **strategy_manager.py**: managing hedging implementation
 #### Telegram Bot Interface (`src/bot/`)
 - **telegram_bot.py**: Main bot implementation with async operations
 - **utils.py**: Message formatting, keyboards, task management
