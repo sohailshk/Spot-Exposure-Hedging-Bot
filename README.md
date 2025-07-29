@@ -140,6 +140,7 @@ call_strike = current_price * 1.05  # Upside cap
 ```bash
 # Run all tests
 pytest tests/ -v
+```
 
 ### Test Categories
 - **Risk Engine Tests**: Mathematical accuracy validation
