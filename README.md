@@ -141,10 +141,6 @@ call_strike = current_price * 1.05  # Upside cap
 # Run all tests
 pytest tests/ -v
 
-# Expected output:
-# ====== 64 passed in 5.93s ======
-```
-
 ### Test Categories
 - **Risk Engine Tests**: Mathematical accuracy validation
 - **Strategy Tests**: Hedging logic verification  
