@@ -1,6 +1,6 @@
 # Spot Hedging Bot
 
-[![Tests](https://img.shields.io/badge/tests-30%20passed-brightgreen)](tests/)
+[![Tests](https://img.shields.io/badge/tests-64%20passed-brightgreen)](tests/)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
 [![Status](https://img.shields.io/badge/status-production%20ready-success)](#)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -195,30 +195,12 @@ sudo journalctl -u hedging-bot -f
 - **Health Monitoring**: Built-in health checks
 - **Secure Configuration**: Environment-based secrets
 
-For complete deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
-
 ## 📚 Documentation
 
 ### Available Documentation
 - **[Technical Report](TECHNICAL_REPORT.md)**: Complete system documentation
-- **[Presentation](PRESENTATION.md)**: Executive overview and business case
-- **[Demo Script](DEMO_SCRIPT.md)**: Live demonstration guide
 - **[Deployment Guide](DEPLOYMENT_GUIDE.md)**: Production setup instructions
 
 ---
 
 **Built with ❤️ for professional trading operations**
-
-*For questions, issues, or feature requests, please check the documentation or create an issue.*
-```
-
-## Quick Start
-
-1. Install dependencies: `pip install -r requirements.txt`
-2. Configure your API keys in `config/config.yaml`
-3. Set up Telegram bot token
-4. Run: `python src/bot/main.py`
-
-## Documentation
-
-See `docs/` folder for detailed technical documentation and user guides.
